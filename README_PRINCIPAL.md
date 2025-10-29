@@ -1,4 +1,3 @@
-```markdown
    # Proyecto Final - Docker & Kubernetes
 
    Alumno: Francisco Humberto Flores Huanca
