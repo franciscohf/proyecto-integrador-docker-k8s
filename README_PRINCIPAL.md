@@ -23,7 +23,7 @@
 
    ![Pods running][def2]
 
-   ![Frontend via MetalLB][def3]
+   ![Frontend][def3]
 
 [def]: screenshots/parte1-microk8s-status.png
 [def2]: screenshots/parte1-pods-running.png
