@@ -19,10 +19,14 @@
    - Rango MetalLB: 10.241.2.240-10.241.2.250
 
    ### Screenshots
-   ![microk8s status](screenshots/parte1-microk8s-status.png)
+   ![microk8s status][def]
 
-   ![Pods running](screenshots/parte1-pods-running.png)
+   ![Pods running][def2]
 
-   ![Frontend via MetalLB](screenshots/parte1_frontend_browser.png)
+   ![Frontend via MetalLB][def3]
 
-    ## Parte 2: Backend v2.1
+[def]: screenshots/parte1-microk8s-status.png
+[def2]: screenshots/parte1-pods-running.png
+[def3]: screenshots/parte1_frontend_browser.png
+
+## Parte 2: Backend v2.1
