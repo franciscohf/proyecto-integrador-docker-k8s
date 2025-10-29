@@ -23,5 +23,6 @@
 
    ![Pods running](/screenshots/parte1-pods-running.png)
 
-   ![Frontend via MetalLB](/screenshots/parte1-frontend-browser.PNG)
-   
+   ![Frontend via MetalLB](/screenshots/parte1_frontend_browser.png)
+
+    ## Parte 2: Backend v2.1
