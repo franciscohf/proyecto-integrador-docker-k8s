@@ -20,5 +20,8 @@
 
    ### Screenshots
    ![microk8s status](/screenshots/parte1-microk8s-status.png)
+
    ![Pods running](/screenshots/parte1-pods-running.png)
+
    ![Frontend via MetalLB](/screenshots/parte1-frontend-browser.PNG)
+   
