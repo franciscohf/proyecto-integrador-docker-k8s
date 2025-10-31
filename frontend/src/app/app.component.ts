@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
   loading = false;
   error: string | null = null;
   success: string | null = null;
+  systemInfo: any = null;
 
   // Detección de versión basada en puerto
   version = 'v2.0';

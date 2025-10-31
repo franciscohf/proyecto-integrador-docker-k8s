@@ -69,77 +69,46 @@ public ResponseEntity<Map<String, Object>> getInfo() {
 ![Sistema cargado](screenshots/parte3-sistema-cargado.PNG)
 
 
-## Parte 4: Gestión de Versiones con Rollout
+## Parte 4: Gestión de Versiones
 
 ### Objetivo
 Aprender a gestionar versiones de deployments usando comandos de rollout (rollback, rollforward, historial).
 
-### Tareas
+### ¿Qué hace kubectl rollout undo?
 
+Con el comando podemos volver a una version anterior en caso de falla de la version actual
+o  volver de la anterior a la actual.
 #### 4.1 Ver Historial de Rollouts
 
-```bash
-# Ver historial del backend
-kubectl rollout history deployment/api -n proyecto-integrador
 
-# Ver historial del frontend
-kubectl rollout history deployment/frontend -n proyecto-integrador
-```
+  ### Screenshots
+- ![kubectl rollout history backend](screenshots/parte4-kubectl-rollout-history-backend.png)
+- ![kubectl rollout history frontend](screenshots/parte4-kubectl-rollout-history-frontend.png)
+- ![rollback](screenshots/parte4-proceso-rollback.png)
+- ![api info](screenshots/parte4-api-info-404.png)
+- ![rollback reversion](screenshots/parte4-rollback-reversion.png)
+- ![api info funcinal](screenshots/parte4-api-info-funcional.png)
 
-**Salida esperada:**
-```
-REVISION  CHANGE-CAUSE
-1         <none>
-2         <none>
-```
+## Parte 5: Ingress + MetalLB
 
-#### 4.2 Hacer Rollback a Versión Anterior
+   **IP del Ingress:** 10.241.2.240-10.241.2.250
 
-```bash
-# Rollback del backend a v2.0
-kubectl rollout undo deployment/api -n proyecto-integrador
+   ### Screenshots
+   ![Ingress config](screenshots/parte5-ingress.png)
+   ![Acceso externo](screenshots/parte5-external-access.png)
 
-# Ver el proceso
-kubectl rollout status deployment/api -n proyecto-integrador
+   ## Conclusiones
 
-# Verificar que el endpoint /api/info ya NO existe
-curl http://<IP-METALLB>/api/info
-# Debería dar error 404
-```
+   ### Aprendizajes principales
+   - Manajeo de docker
+   - Conocer un poco mas de la publicacion de imagenes
+   - Ver el proceso y uso de comandos de kubernete
+   - Conocer como se implemente el deploymet
+   - Manejo de errores
 
-#### 4.3 Volver a la Versión v2.1 (Rollforward)
-
-```bash
-# Ver historial actualizado
-kubectl rollout history deployment/api -n proyecto-integrador
-
-# Rollback a la revisión 2 (que es v2.1)
-kubectl rollout undo deployment/api --to-revision=2 -n proyecto-integrador
-
-# Verificar
-curl http://<IP-METALLB>/api/info
-# Debería funcionar nuevamente
-```
-
-#### 4.4 Forzar Recreación de Pods
-
-```bash
-# Reiniciar deployment sin cambiar imagen (útil para debugging)
-kubectl rollout restart deployment/api -n proyecto-integrador
-
-# Ver los pods recreándose
-kubectl get pods -n proyecto-integrador -w
-```
-
-**ACCIÓN REQUERIDA:** Captura los screenshots de todos los pasos de rollout (history, rollback, rollforward) solicitados en los Entregables Parte 4.
-
-### Entregables Parte 4
-- Screenshot de `kubectl rollout history` del backend
-- Screenshot de `kubectl rollout history` del frontend
-- Screenshot del proceso de rollback (undo)
-- Screenshot verificando que `/api/info` dejó de funcionar después del rollback
-- Screenshot del rollforward (undo --to-revision=2)
-- Screenshot verificando que `/api/info` volvió a funcionar
-- Explicación en tus propias palabras: ¿Qué hace `kubectl rollout undo`?
-
----
+   ### Dificultades encontradas
+   - El ingress no tenia una ip externa 
+   - No se actualizaba los cambios de la imagen, habia que crear una imagne con otro tag
+   
+   ### Reflexión
+   El manejo de imagenes para la implementacion de microservicios

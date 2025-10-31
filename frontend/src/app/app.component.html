@@ -34,6 +34,7 @@
       </ul>
     </div>
     </div>
+  <div class="card">
 <div class="form-group">
   <button (click)="getSystemInfo()" class="btn-primary">
     Ver Info del Sistema
@@ -47,6 +48,7 @@
   <p><strong>Curso:</strong> {{ systemInfo.curso }}</p>
   <p><strong>Timestamp:</strong> {{ systemInfo.timestamp }}</p>
   <p><strong>Pod:</strong> {{ systemInfo.hostname }}</p>
+</div>
 </div>
   <!-- Mensajes -->
   <div *ngIf="error" class="error">
