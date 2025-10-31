@@ -129,4 +129,22 @@ export class AppComponent implements OnInit {
     this.error = null;
     this.success = null;
   }
+  
+  getSystemInfo(): void {
+    this.http.get('/api/infoA').subscribe({
+      next: (data) => {
+        this.systemInfo = data;
+        this.success = 'Información del sistema cargada';
+        setTimeout(() => this.success = null, 3000);
+      },
+      error: (err) => {
+        this.error = 'Error al obtener información del sistema';
+        console.error('Error:', err);
+      }
+    });
+  }
 }
+
+
+
+  

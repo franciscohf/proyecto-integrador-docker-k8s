@@ -6,7 +6,7 @@
 
    ## Links de Docker Hub
    - Backend v2.1: https://hub.docker.com/repository/docker/francisco13/springboot-api/general
-   - Frontend v2.2: https://hub.docker.com/repositories/francisco13
+   - Frontend v2.2: https://hub.docker.com/repository/docker/francisco13/angular-frontend/general
 
    ## Parte 1: Setup del Ambiente
 
@@ -57,3 +57,13 @@ public ResponseEntity<Map<String, Object>> getInfo() {
 ![kubectl rollout status](screenshots/parte2-rollout.png)
 ![kubectl get pods](screenshots/parte2-kubectl-pods.png)
 ![kubectl get pods](screenshots/parte2-kubectl-pods.png)
+
+## Parte 3: Frontend v2.2
+ Se realizo cambios en el frontend
+### Screenshots
+![Frontend build](screenshots/parte3-frontend-build.png)
+![html](screenshots/parte3-html.png)
+![ts](screenshots/parte3-ts.png)
+![kubectl get pods](screenshots/parte3-kubectl-get-pods.PNG)
+![Info Sistema](screenshots/parte3-info-sistema.PNG)
+![Sistema cargado](screenshots/parte3-sistema-cargado.PNG)
