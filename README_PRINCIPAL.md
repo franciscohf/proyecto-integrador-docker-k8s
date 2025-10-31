@@ -5,7 +5,7 @@
    Curso: Docker & Kubernetes - i-Quattro
 
    ## Links de Docker Hub
-   - Backend v2.1: https://hub.docker.com/repositories/francisco13
+   - Backend v2.1: https://hub.docker.com/repository/docker/francisco13/springboot-api/general
    - Frontend v2.2: https://hub.docker.com/repositories/francisco13
 
    ## Parte 1: Setup del Ambiente
@@ -30,3 +30,30 @@
 [def3]: screenshots/parte1_frontend_browser.png
 
 ## Parte 2: Backend v2.1
+Se adiciono el Endpoint en el controlador GreetingController
+Se adiciono su import
+Se aplicaron cambios a los deploments
+
+### Código Agregado
+
+import org.springframework.http.ResponseEntity;
+
+@GetMapping("/api/infoA")
+public ResponseEntity<Map<String, Object>> getInfo() {
+    Map<String, Object> info = new HashMap<>();
+    info.put("alumno", "Francisco Humberto Flores Huanca");
+    info.put("version", "v2.1");
+    info.put("curso", "Docker & Kubernetes - i-Quattro");
+    info.put("timestamp", LocalDateTime.now().toString());
+    info.put("hostname", System.getenv("HOSTNAME"));
+    return ResponseEntity.ok(info);
+}
+
+### Screenshots
+![Docker build](screenshots/parte2-docker-build.png)
+![Rollout](screenshots/parte2-rollout.png)
+![API Info](screenshots/parte2-api-info.png)
+![docker images](screenshots/parte2-docker%20images.png)
+![kubectl rollout status](screenshots/parte2-rollout.png)
+![kubectl get pods](screenshots/parte2-kubectl-pods.png)
+![kubectl get pods](screenshots/parte2-kubectl-pods.png)
